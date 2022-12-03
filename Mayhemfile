@@ -1,0 +1,6 @@
+project: bit-vec
+target: bitvec-fuzz
+
+cmds:
+    - cmd: ./bitvec-fuzz
+      libfuzzer: true
