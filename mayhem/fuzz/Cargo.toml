@@ -1,0 +1,38 @@
+[package]
+name = "bit-vec-mayhem-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+serde = "1.0"
+serde_json = "1.0"
+miniserde = "0.1"
+borsh = "1.7"
+
+[dependencies.bit-vec]
+path = "../../vec"
+features = ["serde", "borsh", "miniserde"]
+
+[dependencies.bit-set]
+path = "../../set"
+
+# Prevent this from interfering with the upstream workspace
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "bitvec-fuzz"
+path = "fuzz_targets/bitvec-fuzz.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "bit_ops"
+path = "fuzz_targets/bit_ops.rs"
+test = false
+doc = false
