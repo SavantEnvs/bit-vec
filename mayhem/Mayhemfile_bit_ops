@@ -1,0 +1,5 @@
+project: savantenvs/bit-vec
+target: bit_ops
+cmds:
+  - cmd: /mayhem/bit_ops
+    libfuzzer: true

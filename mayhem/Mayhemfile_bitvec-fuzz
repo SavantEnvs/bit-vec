@@ -1,0 +1,5 @@
+project: savantenvs/bit-vec
+target: bitvec-fuzz
+cmds:
+  - cmd: /mayhem/bitvec-fuzz
+    libfuzzer: true
