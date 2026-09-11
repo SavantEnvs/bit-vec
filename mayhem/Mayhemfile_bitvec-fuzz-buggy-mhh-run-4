@@ -1,0 +1,8 @@
+project: savantenvs/bit-vec
+target: bitvec-fuzz-buggy-mhh-run-4
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/bitvec-fuzz-buggy-mhh-run-4/testsuite
+cmds:
+  - cmd: /mayhem/bitvec-fuzz
+    libfuzzer: true
